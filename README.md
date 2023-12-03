@@ -1,11 +1,11 @@
 
 
 ### INSTALL SCRIPT 
-<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/valkry7/wiz4rd/MONSTER/premi.sh && chmod +x premi.sh && ./premi.sh
+<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/xssh99/scx/main/premi.sh && chmod +x premi.sh && ./premi.sh
 </code></pre>
 
 ### PERINTAH UPDATE 
-<pre><code>wget https://raw.githubusercontent.com/valkry7/wiz4rd/MONSTER/update.sh && chmod +x update.sh && ./update.sh</code></pre>
+<pre><code>wget https://raw.githubusercontent.com/xssh99/scx/main/rabah/update.sh && chmod +x update.sh && ./update.sh</code></pre>
 
 ### TESTED ON OS 
 - UBUNTU 20.04.05
@@ -31,7 +31,7 @@
 ### Author
 ```
 ```
-LunaticTunnel :<a href="https://t.me/LunaticTunnel" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br>
+LunaticTunnel :<a href="https://t.me/Cibut2d" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br>
 ```
 ```
 ``
