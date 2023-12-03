@@ -1,0 +1,7 @@
+
+REPO="https://raw.githubusercontent.com/valkry7/wiz4rd/MONSTER/"
+
+
+
+wget -q -O /etc/default/dropbear "${REPO}limit/dropbear.conf"
+chmod +x /etc/default/dropbear
