@@ -99,7 +99,7 @@ clear
 rm -f /usr/bin/user
 username=$(curl https://raw.githubusercontent.com/xssh99/reg/main/ip | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/valkry7/xssh99/reg/main/ip | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/xssh99/reg/main/ip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
