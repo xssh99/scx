@@ -202,7 +202,7 @@ echo -e " ${z}│$NC   [${green}02${NC}] VMESS                [${green}08${NC}] 
 echo -e " ${z}│$NC   [${green}03${NC}] VLESS                [${green}09${NC}] SPEEDTEST ${z}               │$NC"  
 echo -e " ${z}│$NC   [${green}04${NC}] TROJAN               [${green}10${NC}] BACKUP/RESTORE ${z}          │$NC"
 echo -e " ${z}│$NC   [${green}05${NC}] SHADOW               [${green}11${NC}] ADD BOT ${z}                 │$NC"
-echo -e " ${z}│$NC   [${green}06${NC}] SETTING             [${green}12${NC}] UPDATE AUTOSCRIPT ${z}        │$NC"
+echo -e " ${z}│$NC   [${green}06${NC}] SETTING              [${green}12${NC}] UPDATE AUTOSCRIPT ${z}       │$NC"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC${z} AUTHOR$NC          ${z}=$NC Julak Bantur"
