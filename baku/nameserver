@@ -1,13 +1,13 @@
 #!/bin/sh
-REPOS="https://raw.githubusercontent.com/ppnhss/haproxy/main/"
+REPOS="https://raw.githubusercontent.com/xssh99/vip/main/"
 ns_domain_cloudflare() {
-	DOMAIN="bagusid.my.id"
+	DOMAIN="kdg.my.id"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}."bagusid.my.id"
+	SUB_DOMAIN=${SUB}."kdg.my.id"
 	NS_DOMAIN=dns.${SUB_DOMAIN}
 	CF_ID=putrameratus2@gmail.com
-        CF_KEY=69c3940d1896bc19698277104e783dab6cee4
+        CF_KEY=8d5c58d345dbb3b34b8420b9b15df5f6b8292
 	set -euo pipefail
 	IP=$(wget -qO- ipinfo.io/ip)
 	echo "Updating DNS NS for ${NS_DOMAIN}..."
@@ -49,15 +49,15 @@ setup_dnstt() {
 	cd
 	rm -rf *
 	mkdir -p /etc/slowdns
-	wget -O dnstt-server "${REPOS}slowdns/dnstt-server" >/dev/null 2>&1
+	wget -O dnstt-server "${REPOS}baku/dnstt-server" >/dev/null 2>&1
 	chmod +x dnstt-server >/dev/null 2>&1
-	wget -O dnstt-client "${REPOS}slowdns/dnstt-client" >/dev/null 2>&1
+	wget -O dnstt-client "${REPOS}baku/dnstt-client" >/dev/null 2>&1
 	chmod +x dnstt-client >/dev/null 2>&1
 	./dnstt-server -gen-key -privkey-file server.key -pubkey-file server.pub
 	chmod +x *
 	mv * /etc/slowdns
-	wget -O /etc/systemd/system/client.service "${REPOS}slowdns/client" >/dev/null 2>&1
-	wget -O /etc/systemd/system/server.service "${REPOS}slowdns/server" >/dev/null 2>&1
+	wget -O /etc/systemd/system/client.service "${REPOS}baku/client" >/dev/null 2>&1
+	wget -O /etc/systemd/system/server.service "${REPOS}baku/server" >/dev/null 2>&1
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/client.service 
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/server.service 
 }
