@@ -16,6 +16,7 @@ grenbo="\e[92;1m"
 purple="\033[1;95m"
 YELL='\033[0;33m'
 cyan="\033[1;36m"
+c="\033[5;33m"
 
 # // Gettings Info
 ISP=$(cat /etc/xray/isp)
@@ -170,14 +171,14 @@ let ssa=$ssx/2
 # // ---- >>>
 ########### // JULAK // BANTUR
 TZ="\033[1;35m___\033[1;34m___\033[1;32m___\033[1;36m___\033[1;37m___\033[1;34m"
-vers="JB-02 LITE"
+vers="VERSION  JB-02 LITE"
 # // ----->>>
 r="\033[1;31m"  #REDTERANG
 a=" ${z}ACCOUNT PREMIUM" 
 BG_RED="\033[45;1m"
 echo -e " "
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC\033[5;33m                     Premium Autoscript                        $NC${z}│$NC"
+echo -e " ${z}│$NC\033[5;33m                     Premium Autoscript                    $NC${z}│$NC"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC • $NC${z} System OS ${NC}     ${z}=$NC $MODEL${NC}"
@@ -197,12 +198,12 @@ echo -e "                        ${BG_RED}ACCOUNT INFO${NC}"
 echo -e "        SSH & OPENVPN : $ssh1 TROJAN : $trb  SHADOWSOCKS-R : $ssa"
 echo -e "                        VLESS : $vla VMESS : $vma"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC   [${green}01${NC}] SSH                     [${green}07${NC}] CHECK RUNNING ${z}       │$NC" 
-echo -e " ${z}│$NC   [${green}02${NC}] VMESS                   [${green}08${NC}] CHECK BANDWITH ${z}      │$NC"    
-echo -e " ${z}│$NC   [${green}03${NC}] VLESS                   [${green}09${NC}] SPEEDTEST ${z}           │$NC"  
-echo -e " ${z}│$NC   [${green}04${NC}] TROJAN                  [${green}10${NC}] BACKUP/RESTORE ${z}      │$NC"
-echo -e " ${z}│$NC   [${green}05${NC}] SHADOW                  [${green}11${NC}] ADD BOT ${z}             │$NC"
-echo -e " ${z}│$NC   [${green}06${NC}] SETTING                 [${green}12${NC}] UPDATE AUTOSCRIPT ${z}   │$NC"
+echo -e " ${z}│$NC   [${green}01${NC}] ${c}SSH${NC}                     [${green}07${NC}] ${c}CHECK RUNNING${NC} ${z}       │$NC" 
+echo -e " ${z}│$NC   [${green}02${NC}] ${c}VMESS${NC}                   [${green}08${NC}] ${c}CHECK BANDWITH${NC} ${z}      │$NC"    
+echo -e " ${z}│$NC   [${green}03${NC}] ${c}VLESS${NC}                   [${green}09${NC}] ${c}SPEEDTEST${NC} ${z}           │$NC"  
+echo -e " ${z}│$NC   [${green}04${NC}] ${c}TROJAN${NC}                  [${green}10${NC}] ${c}BACKUP/RESTORE${NC} ${z}      │$NC"
+echo -e " ${z}│$NC   [${green}05${NC}] ${c}SHADOW${NC}                  [${green}11${NC}] ${c}ADD BOT${NC} ${z}             │$NC"
+echo -e " ${z}│$NC   [${green}06${NC}] ${c}SETTING${NC}                 [${green}12${NC}] ${c}UPDATE AUTOSCRIPT${NC} ${z}   │$NC"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC${z} AUTHOR$NC          ${z}=$NC Julak Bantur"
