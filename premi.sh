@@ -99,7 +99,7 @@ clear
 rm -f /usr/bin/user
 username=$(curl https://raw.githubusercontent.com/xssh99/reg/main/ip | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/xssh99/reg/main/ip | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/valkry7/xssh99/reg/main/ip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -286,7 +286,7 @@ clear
 echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
 echo -e "   '----------------------------------'"
 echo -e "     \e[1;32m1)\e[0m Domain Sendiri"
-echo -e "     \e[1;32m2)\e[0m Gunakan Domain Random Khusus Digital ocean ISP LAIN ✖️ "
+echo -e "     \e[1;32m2)\e[0m Gunakan Domain Random"
 echo -e "   ------------------------------------"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
@@ -299,7 +299,7 @@ echo $host1 > /root/domain
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
-wget ${REPO}linak/cf.sh && chmod +x cf.sh && ./cf.sh
+wget -q ${REPO}linak/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
 clear
 else
@@ -316,7 +316,7 @@ restart_system() {
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
-<b>⚡AUTOSCRIPT JB-04 LITE⚡</b>
+<b>⚡AUTOSCRIPT JB-02 LITE⚡</b>
 <code>────────────────────</code>
 <code>ID     : </code><code>$USRSC</code>
 <code>Domain : </code><code>$domain</code>
@@ -407,8 +407,8 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
  
     # // Ambil Config Server
-    wget -O /etc/xray/config.json "${REPO}julak/config.json" >/dev/null 2>&1
-    wget -O /etc/systemd/system/runn.service "${REPO}julak/runn.service" >/dev/null 2>&1
+    wget -q /etc/xray/config.json "${REPO}julak/config.json" >/dev/null 2>&1
+    wget -q /etc/systemd/system/runn.service "${REPO}julak/runn.service" >/dev/null 2>&1
     domain=$(cat /etc/xray/domain)
     IPVS=$(cat /etc/xray/ipvps)
     print_success "Core Xray Latest Version"
@@ -418,8 +418,8 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
     print_install "Menginstall Konfigurasi Service"
-    wget -O /etc/haproxy/haproxy.cfg "${REPO}julak/haproxy.cfg" >/dev/null 2>&1
-    wget -O /etc/nginx/conf.d/xray.conf "${REPO}julak/xray.conf" >/dev/null 2>&1
+    wget -q /etc/haproxy/haproxy.cfg "${REPO}julak/haproxy.cfg" >/dev/null 2>&1
+    wget -q /etc/nginx/conf.d/xray.conf "${REPO}julak/xray.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
     curl ${REPO}bantur/nginx.conf > /etc/nginx/nginx.conf
@@ -457,7 +457,7 @@ print_success "Konfigurasi Service"
 function ssh(){
 clear
 print_install "Menginstall Password SSH"
-    wget -O /etc/pam.d/common-password "${REPO}linak/password"
+    wget -q /etc/pam.d/common-password "${REPO}linak/password"
 chmod +x /etc/pam.d/common-password
 
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
@@ -677,7 +677,7 @@ function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
 #OpenVPN
-wget ${REPO}linak/openvpn &&  chmod +x openvpn && ./openvpn
+wget -q ${REPO}linak/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 print_success "OpenVPN"
 }
@@ -688,7 +688,7 @@ print_install "Install Backup Server"
 #BackupOption
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "${REPO}baku/rclone.conf"
+wget -q /root/.config/rclone/rclone.conf "${REPO}baku/rclone.conf"
 #Install Wondershaper
 cd /bin
 git clone  https://github.com/magnific0/wondershaper.git
@@ -740,7 +740,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc sourcestats -v
     chronyc tracking -v
     
-    wget ${REPO}linak/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+    wget -q ${REPO}linak/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1G"
 }
 
@@ -766,16 +766,16 @@ echo "Banner /etc/julak.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/julak.txt"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/julak.txt "${REPO}linak/issue.net"
+wget -q /etc/julak.txt "${REPO}linak/issue.net"
 print_success "Fail2ban"
 }
 
 function ins_epro(){
 clear
 print_install "Menginstall WebSocket"
-    wget -O /usr/bin/ws "${REPO}bantur/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}bantur/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}bantur/ws.service" >/dev/null 2>&1
+    wget -q /usr/bin/ws "${REPO}bantur/ws" >/dev/null 2>&1
+    wget -q /usr/bin/tun.conf "${REPO}bantur/tun.conf" >/dev/null 2>&1
+    wget -q /etc/systemd/system/ws.service "${REPO}bantur/ws.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
     chmod +x /usr/bin/ws
     chmod 644 /usr/bin/tun.conf
@@ -786,7 +786,7 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}baku/ftvpn" >/dev/null 2>&1
+wget -q /usr/sbin/ftvpn "${REPO}baku/ftvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
@@ -848,7 +848,7 @@ print_success "Restart All Service"
 function menu(){
     clear
     print_install "Install Menu Service"
-    wget ${REPO}rabah/menu.zip
+    wget -q ${REPO}rabah/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
@@ -884,6 +884,11 @@ cat >/etc/cron.d/xp_all <<-END
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 		*/20 * * * * root /usr/local/sbin/clearlog
 		END
+	#cat >/etc/cron.d/kl_otm <<-END
+		#SHELL=/bin/sh
+		#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		#*/2 * * * * root /usr/local/sbin/kills
+		#END
     chmod 644 /root/.profile
 	
     cat >/etc/cron.d/daily_reboot <<-END
