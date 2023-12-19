@@ -1,4 +1,8 @@
+### UPDATE FOR DEBIAN
+<pre><code>apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot</code></pre>
 
+### UPDATE FOR UBUNTU
+<pre><code>apt update && apt upgrade -y && update-grub && sleep 2 && reboot</code></pre>
 
 ### INSTALL SCRIPT 
 <pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/xssh99/scx/main/deb10.sh && chmod +x deb10.sh && ./deb10.sh
