@@ -1,5 +1,0 @@
-REPO="https://raw.githubusercontent.com/valkry7/wiz4rd/MONSTER/"
-
-
-
-wget -O /root/.config/rclone/rclone.conf "${REPO}limit/rclone.conf"
