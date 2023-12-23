@@ -6,7 +6,7 @@ TIME="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="
 <code>────────────────────</code>
-<b>⚠️ NOTIFICATIONS MULTI LOGIN SSH ⚠️</b>
+<b>⚠️ NOTIF MULTI LOGIN SSH SC JB-02 ⚠️</b>
 <code>────────────────────</code>
 <code>Username  : </code><code>$user</code>
 <code>Limit Ip    : </code><code>$iplimit</code>
@@ -16,10 +16,10 @@ curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TE
 }
 mulog=$(member)
 date=$(date)
-data=( `ls /etc/kyt/limit/ssh/ip`);
+data=( `ls /etc/julak/limit/ssh/ip`);
 for user in "${data[@]}"
 do
-iplimit=$(cat /etc/kyt/limit/ssh/ip/$user)
+iplimit=$(cat /etc/julak/limit/ssh/ip/$user)
 cekcek=$(echo -e "$mulog" | grep $user | wc -l);
 if [[ $cekcek -gt $iplimit ]]; then
 userdel -f -r $user
