@@ -1,4 +1,4 @@
-#!/bin/bash
+71#!/bin/bash
 
 function send_log(){
 TIMES="10"
@@ -7,7 +7,7 @@ KEY=$(grep -E "^#bot# " "/etc/bot/.bot.db" | cut -d ' ' -f 2)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="
 <code>────────────────────</code>
-<b>⚠️NOTIF MULTILOGIN SC JB-05 LITE⚠️</b>
+<b>⚠️NOTIF MULTILOGIN SC JB-02 LITE⚠️</b>
 <code>────────────────────</code>
 <code>Username    : </code><code>$user</code>
 <code>Login Ip    : </code><code>$cekcek</code>
