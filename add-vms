@@ -83,11 +83,9 @@ menu-vmess
 		fi
 	done
 echo -e ""
-#uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "Uuid (Manual): " uuid
-echo -e "${COLOR1}(Isi dengan Domain/Host Jika Tidak Ingin Menambahkan Bug)${NC}"
-read -p "Bug (Bug Kuota ): " bug
+uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
+read -p "Limit (Quota): " Quota
 read -p "Limit (IP): " iplimit
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp $uuid $bug"'\
@@ -108,14 +106,14 @@ asu=`cat<<EOF
       "type": "none",
       "host": "${domain}",
       "tls": "tls",
-      "sni": "${bug}"
+      "sni": "${domain}"
 }
 EOF`
 ask=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": "${bug}",
+      "add": "${domain}",
       "port": "80",
       "id": "${uuid}",
       "aid": "0",
@@ -139,7 +137,7 @@ grpc=`cat<<EOF
       "type": "none",
       "host": "${domain}",
       "tls": "tls",
-      "sni": "${bug}"
+      "sni": "${domain}"
 }
 EOF`
 vmess_base641=$( base64 -w 0 <<< $vmess_json1)
