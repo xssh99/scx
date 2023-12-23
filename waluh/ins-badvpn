@@ -1,11 +1,11 @@
 #!/bin/bash
 #UDP
-GITHUB_CMD="https://sc2.scvps.biz.id/"
-wget -O /usr/bin/badvpn "${GITHUB_CMD}kajung/badvpn" >/dev/null 2>&1
+kimut="https://sc2.scvps.biz.id/"
+wget -O /usr/bin/badvpn "${kimut}waluh/badvpn" >/dev/null 2>&1
 chmod +x /usr/bin/badvpn > /dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn1.service "${GITHUB_CMD}kajung/badvpn1.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn2.service "${GITHUB_CMD}kajung/badvpn2.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn3.service "${GITHUB_CMD}kajung/badvpn3.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn1.service "${kimut}waluh/badvpn1.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn2.service "${kimut}waluh/badvpn2.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn3.service "${kimut}waluh/badvpn3.service" >/dev/null 2>&1
 systemctl disable badvpn1 
 systemctl stop badvpn1 
 systemctl enable badvpn1
