@@ -7,7 +7,7 @@ echo -e "\033[36m# // Description: Xray Multiport\e[0m"
 echo -e "\033[36m# // email: putrameratus2@gmail.com\e[0m"
 echo -e "\033[36m# // telegram: t.me/Cibut2d\e[0m"
 echo -e "\033[36m# //====================================\e[0m"
-sleep 1
+sleep 3
 ### Color
 apt upgrade -y
 apt update -y
