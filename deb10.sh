@@ -880,7 +880,7 @@ function menu(){
 }
 
 function ins_janda() {
-wget -q {julak}rabah/tm.sh &&  chmod +x tm.sh && ./tm.sh
+wget -q ${julak}rabah/tm.sh &&  chmod +x tm.sh && ./tm.sh
 }
 
 function ins_udp() {
