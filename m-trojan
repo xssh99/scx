@@ -67,6 +67,7 @@ checking_sc() {
 checking_sc
 echo -e "\e[32mloading...\e[0m"
 clear
+
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC${COLOR1}                     MENU TROJAN MANAGER                  $NC${z}│$NC"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
@@ -85,7 +86,7 @@ echo -e " ${z}╰═════════════════════
 echo -e ""
 read -p "Select From Options [ 0 - 99 ] : " menu
 case $menu in
-1)   clear ;
+1) clear ;
     addtr
     ;;
 2) clear ;
@@ -116,10 +117,7 @@ case $menu in
     exit
     ;;
 *) clear ;
-    m-vmess
-    ;;
-x) clear ;
-    exit
+    m-trojan
     ;;
 esac
  
