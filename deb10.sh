@@ -34,7 +34,7 @@ clear
 clear && clear && clear
 clear;clear;clear
 
-  # // Banner
+# // Banner
 clear
 echo -e "\033[36m# //====================================\e[0m"
 echo -e "\033[36m# // System Request:Debian 10/Ubuntu 20.04\e[0m"
@@ -310,7 +310,7 @@ echo $host1 > /root/domain
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
-wget ${julak}linak/cf.sh && chmod +x cf.sh && ./cf.sh
+wget -q ${julak}linak/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
 clear
 else
@@ -327,7 +327,7 @@ restart_system() {
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
-<b>⚡AUTOSCRIPT JB-02⚡</b>
+<b>💉AUTOSCRIPT JB-02💉</b>
 <code>────────────────────</code>
 <code>ID     : </code><code>$USRSC</code>
 <code>Domain : </code><code>$domain</code>
@@ -347,7 +347,7 @@ clear
 print_install "INSTALL SSL FOR DOMAIN"
     rm -rf /etc/xray/xray.key
     rm -rf /etc/xray/xray.crt
-    domain=$(cat /root/domain)
+    domain=$(cat /etc/xray/domain)
     STOPWEBSERVER=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
     rm -rf /root/.acme.sh
     mkdir /root/.acme.sh
@@ -407,8 +407,6 @@ rm -rf /etc/vmess/.vmess.db
 function install_xray() {
 clear
     print_install "INSTALL XRAY"
-    # install xray
-    #echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
     domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
     chown www-data.www-data $domainSock_dir
     
@@ -422,7 +420,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     domain=$(cat /etc/xray/domain)
     IPVS=$(cat /etc/xray/ipvps)
     
-    # // Settings UP Nginix Server
+    # // Settings Nginix Server
     clear
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
@@ -465,7 +463,7 @@ EOF
 function ssh(){
 clear
 print_install "INSTALL SSH"
-    wget -O /etc/pam.d/common-password "${julak}linak/password"
+wget -O /etc/pam.d/common-password "${julak}linak/password"
 chmod +x /etc/pam.d/common-password
 
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
@@ -491,7 +489,6 @@ chmod +x /etc/pam.d/common-password
 # go to root
 cd
 
-# Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -534,7 +531,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 }
 
-function udp_mini(){
+function limit_ip(){
 clear
 print_install "INSTALL LIMIT IP"
 wget -q -O /usr/local/sbin/quota "${julak}limit/quota"
@@ -654,7 +651,7 @@ systemctl daemon-reload
 systemctl restart qmtr
 systemctl enable qmtr
 # // INSTALL UDPGW SSH
-wget ${julak}waluh/ins-badvpn &&  chmod +x ins-badvpn && ./ins-badvpn
+wget -q ${julak}waluh/ins-badvpn &&  chmod +x ins-badvpn && ./ins-badvpn
 }
 
 function ssh_slow(){
@@ -713,7 +710,7 @@ rm -rf /root/vnstat-2.6
 function ins_openvpn(){
 clear
 print_install "INSTALL OPENVPN"
-wget ${julak}linak/openvpn &&  chmod +x openvpn && ./openvpn
+wget -q ${julak}linak/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 }
 
@@ -773,7 +770,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc sourcestats -v
     chronyc tracking -v
     
-    wget ${julak}linak/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+    wget -q ${julak}linak/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 }
 
 function ins_Fail2ban(){
@@ -874,7 +871,7 @@ rm -f /root/cert.pem
 function menu(){
     clear
     print_install "INSTALL JANDA PIRANG"
-    wget ${julak}rabah/menu.zip
+    wget -q ${julak}rabah/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
@@ -883,7 +880,7 @@ function menu(){
 }
 
 function ins_janda() {
-wget {julak}rabah/tm.sh &&  chmod +x tm.sh && ./tm.sh
+wget -q {julak}rabah/tm.sh &&  chmod +x tm.sh && ./tm.sh
 }
 
 function ins_udp() {
@@ -908,7 +905,7 @@ EOF
 	cat >/etc/cron.d/hps_otm <<-END
 		SHELL=/bin/sh
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-		*/59 * * * * root /usr/local/sbin/kills
+		*/2 * * * * root /usr/local/sbin/kills
 		END
 cat >/etc/cron.d/xp_all <<-END
 		SHELL=/bin/sh
@@ -998,7 +995,7 @@ clear
     pasang_ssl
     install_xray
     ssh
-    udp_mini
+    limit_ip
     ssh_slow
     ins_SSHD
     ins_dropbear
