@@ -1,7 +1,38 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-red() { echo -e "\\033[32;1m${*}\\033[0m"; }
+# //====================================================
+# //	System Request:Debian 9+/Ubuntu 18.04+/20+
+# //	Author:	Julak Bantur
+# //	Dscription: Xray MultiPort
+# //	email: putrameratus2@gmail.com
+# //  telegram: https://t.me/Cibut2d
+# //====================================================
+# // font color configuration | JULAK BANTUR AUTOSCRIPT
+###########- COLOR CODE -##############
+colornow=$(cat /etc/julak/theme/color.conf)
+VC="\e[0m"
+Green="\e[92;1m"
+BICyan='\033[1;96m'
+BIYellow='\033[1;93m'
+COLOR1="$(cat /etc/julak/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/julak/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+WH='\033[1;37m'
+y='\033[1;33m' #yellow
+l='\033[0;37m'
+BGX="\033[42m"
+CYAN="\033[96m"
+z="\033[96m"
+zx="\033[97;1m" # // putih
+RED='\033[0;31m'
+NC='\033[0m'
+gray="\e[1;30m"
+Blue="\033[0;34m"
+green='\033[1;32m'
+grenbo="\e[92;1m"
+purple="\033[1;95m"
+YELL='\033[0;33m'
+cyan="\033[1;36m"
+c="\033[5;33m"
+###########- END COLOR CODE -##########
 clear
 fun_bar() {
     CMD[0]="$1"
@@ -40,15 +71,13 @@ res1() {
 }
 netfilter-persistent
 clear
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[1;97;101m          UPDATE SCRIPT JULAK BANTUR       \e[0m"
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e " ${COLOR1}         UPDATE SCRIPT JULAK BANTUR       ${NC}"
+echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "  \033[1;91m update script service\033[1;37m"
+echo -e "  ${COLOR1}" update script service${NC}"
 fun_bar 'res1'
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 read -n 1 -s -r -p "Press [ Enter ] to back on menu"
 menu
-
-###########- COLOR CODE -##############
