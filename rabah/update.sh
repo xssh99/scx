@@ -75,7 +75,7 @@ echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━�
 echo -e " ${COLOR1}         UPDATE SCRIPT JULAK BANTUR       ${NC}"
 echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "  ${COLOR1}" update script service${NC}"
+echo -e "  ${COLOR1} update script service${NC}"
 fun_bar 'res1'
 echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
