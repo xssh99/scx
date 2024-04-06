@@ -61,7 +61,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    wget https://sc2.scvps.biz.id/rabah/menu.zip
+    wget https://sc2.scvps.biz.id/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
