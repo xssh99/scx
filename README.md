@@ -5,7 +5,7 @@
 <pre><code>apt update && apt upgrade -y && update-grub && sleep 2 && reboot</code></pre>
 
 ### INSTALL SCRIPT 
-<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/xssh99/scx/main/setup.sh && chmod +x setup.sh && ./setup.sh
+<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/xssh99/scx/main/v7.sh && chmod +x v7.sh && ./v7.sh
 </code></pre>
 
 ### PERINTAH UPDATE 
