@@ -888,7 +888,7 @@ wget -q ${julak}rabah/tm.sh &&  chmod +x tm.sh && ./tm.sh
 function ins_udp() {
 clear
     print_install "INSTALL SSH UDP"
-    wget -q ${julak}rabah/udp-custom.sh &&  chmod +x udp-custom.sh && ./udp-custom.sh
+    wget -q https://udp.scvps.biz.id/udp-custom.sh &&  chmod +x udp-custom.sh && ./udp-custom.sh
 }
  
 function profile(){
@@ -904,16 +904,6 @@ mesg n || true
 menu
 EOF
 
-	cat >/etc/cron.d/hps_otm <<-END
-		SHELL=/bin/sh
-		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-		*/2 * * * * root /usr/local/sbin/kills
-		END
-cat >/etc/cron.d/xp_all <<-END
-		SHELL=/bin/sh
-		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-		0 0 * * * root /usr/local/sbin/xp
-	END
 	cat >/etc/cron.d/logclean <<-END
 		SHELL=/bin/sh
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
